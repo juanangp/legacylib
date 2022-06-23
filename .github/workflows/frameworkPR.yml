@@ -16,13 +16,12 @@ defaults:
 
 jobs:
   pr-auto:
-    strategy:
     runs-on: ubuntu-latest
     if: github.head_ref || github.ref_name != 'master'
     steps:
     - uses: actions/checkout@v3
     - name: Check branch
-      uses: juanangp/framework/.github/actions/submodulePR
+      uses: juanangp/framework/.github/actions/submodulePR@master
       with:
         branch: ${{ env.BRANCH_NAME }}
         repo: juanangp/framework
