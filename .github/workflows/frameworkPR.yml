@@ -1,0 +1,27 @@
+name: Check on submodules PR
+
+on:
+  pull_request:
+    branches: [ "master" ]
+
+  workflow_dispatch:
+
+env:
+  BRANCH_NAME: ${{ github.head_ref || github.ref_name }}
+  GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+defaults:
+  run:
+    shell: bash
+
+jobs:
+  pr-auto:
+    runs-on: ubuntu-latest
+    if: github.head_ref || github.ref_name != 'master'
+    steps:
+    - uses: actions/checkout@v3
+    - name: Check branch
+      uses: juanangp/framework/.github/actions/submodulePR@master
+      with:
+        branch: ${{ env.BRANCH_NAME }}
+        framework: juanangp/framework
