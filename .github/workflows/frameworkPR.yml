@@ -24,4 +24,4 @@ jobs:
       uses: juanangp/framework/.github/actions/submodulePR@master
       with:
         branch: ${{ env.BRANCH_NAME }}
-        repo: juanangp/framework
+        framework: juanangp/framework
