@@ -8,3 +8,4 @@
 This library contains legacy classes from previous REST versions to keep backward compatibility of the data.
 
 Please have a look to this library [contribution guide](CONTRIBUTING.md) before pushing changes to this repository.
+
